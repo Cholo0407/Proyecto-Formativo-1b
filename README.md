@@ -1,6 +1,4 @@
-////////////////////////////////////
-///// Script de base de datos //////
-////////////////////////////////////
+Script de base de datos 
 
 -- Usuarios
 CREATE TABLE Usuarios (
@@ -24,16 +22,16 @@ END;
 
 -- Pacientes
 CREATE TABLE Pacientes(
-id_paciente NUMBER PRIMARY KEY,
-nombre NVARCHAR2(30) NOT NULL,
-apellido NVARCHAR2(30) NOT NULL,
-edad INT NOT NULL, 
-enfermedad NVARCHAR2(50) NOT NULL,
-numero_Cuarto INT NOT NULL,
-numero_Cama INT NOT NULL,
-medicamentos NVARCHAR2(100) NOT NULL,
-fecha_nacimiento NVARCHAR2(10) NOT NULL,
-hora_medicamentos NVARCHAR2(10) NOT NULL
+    id_paciente NUMBER PRIMARY KEY,
+    nombre NVARCHAR2(30) NOT NULL,
+    apellido NVARCHAR2(30) NOT NULL,
+    edad INT NOT NULL, 
+    enfermedad NVARCHAR2(50) NOT NULL,
+    numero_Cuarto INT NOT NULL,
+    numero_Cama INT NOT NULL,
+    medicamentos NVARCHAR2(100) NOT NULL,
+    fecha_nacimiento NVARCHAR2(10) NOT NULL,
+    hora_medicamentos NVARCHAR2(10) NOT NULL
 );
 
 CREATE SEQUENCE seq_pacientes_id
