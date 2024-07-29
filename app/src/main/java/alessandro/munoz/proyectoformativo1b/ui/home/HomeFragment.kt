@@ -1,5 +1,6 @@
 package alessandro.munoz.proyectoformativo1b.ui.home
 
+import alessandro.munoz.proyectoformativo1b.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,16 +23,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_home, container, false)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 
