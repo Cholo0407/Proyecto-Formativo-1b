@@ -22,4 +22,14 @@
         android:name="alessandro.munoz.proyectoformativo1b.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/anadirPacientes"
+        android:name="alessandro.munoz.proyectoformativo1b.anadirPacientes"
+        android:label="fragment_anadir_pacientes"
+        tools:layout="@layout/fragment_anadir_pacientes" />
+    <fragment
+        android:id="@+id/pacientes"
+        android:name="alessandro.munoz.proyectoformativo1b.Pacientes"
+        android:label="fragment_pacientes"
+        tools:layout="@layout/fragment_pacientes" />
 </navigation>

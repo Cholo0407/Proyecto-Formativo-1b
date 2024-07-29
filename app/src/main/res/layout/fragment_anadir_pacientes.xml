@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#588157"
+    tools:context=".anadirPacientes">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="426dp"
+        android:layout_height="362dp"
+        android:background="@drawable/s5e27fdsw1lr270588157a3b18a"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/albert_sans"
+        android:text="Ingreso de pacientes"
+        android:textAlignment="center"
+        android:textColor="#DAD7CD"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <EditText
+        android:id="@+id/txtApellido"
+        android:layout_width="164dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Apellidos"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/txtEnfermedad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="166dp"
+        android:layout_height="56dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Nombres"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/txtEnfermedad"
+        app:layout_constraintEnd_toStartOf="@+id/txtApellido"
+        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <EditText
+        android:id="@+id/txtMedicamento"
+        android:layout_width="371dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Medicamento/s"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/txtFechaNacimiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtEdad"
+        android:layout_width="164dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtHoraMedicina"
+        android:layout_width="368dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Hora de medicamentos"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/txtNumCama"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNumCuarto"
+        android:layout_width="174dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Num de cuarto"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/txtEdad"
+        app:layout_constraintEnd_toStartOf="@+id/txtNumCama"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtFechaNacimiento"
+        android:layout_width="369dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Fecha de nacimiento"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/txtHoraMedicina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNumCama"
+        android:layout_width="166dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Num de cama"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/txtEdad"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/txtEnfermedad"
+        android:layout_width="372dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/fondo_txt"
+        android:ems="10"
+        android:hint="Enfermedad/es"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="#DAD7CD"
+        android:textColorHint="#A3B18A"
+        app:layout_constraintBottom_toTopOf="@+id/txtMedicamento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="164dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="#344E41"
+        android:text="Registrar"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
