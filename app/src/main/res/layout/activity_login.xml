@@ -113,7 +113,7 @@
 
     <Button
         android:id="@+id/btnIrARegistro"
-        android:layout_width="100dp"
+        android:layout_width="130dp"
         android:layout_height="33dp"
         android:layout_marginBottom="92dp"
         android:backgroundTint="#588157"
