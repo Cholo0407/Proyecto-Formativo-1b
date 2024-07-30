@@ -2,13 +2,13 @@ package Modelo
 
 data class Pacientes(
     val uuid_paciente: String,
-    val nombre: String,
-    val apellido: String,
-    val edad: Int,
-    val enfermedad: String,
-    val numero_Cuarto: Int,
-    val numero_Cama: Int,
-    val medicamentos: String,
-    val fecha_Nacimiento: String,
-    val hora_Medicamentos: String
+    var nombre: String,
+    var apellido: String,
+    var edad: Int,
+    var enfermedad: String,
+    var numero_Cuarto: Int,
+    var numero_Cama: Int,
+    var medicamentos: String,
+    var fecha_Nacimiento: String,
+    var hora_Medicamentos: String
 )

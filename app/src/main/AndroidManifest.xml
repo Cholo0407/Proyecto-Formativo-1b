@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ProyectoFormativo1B"
         tools:targetApi="31">
         <activity
+            android:name=".dialogActualizar"
+            android:exported="false" />
+        <activity
             android:name=".expediente"
             android:exported="false" />
         <activity
