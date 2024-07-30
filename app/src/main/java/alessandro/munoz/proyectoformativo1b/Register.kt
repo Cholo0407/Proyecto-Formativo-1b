@@ -4,6 +4,7 @@ import Modelo.ClaseConexion
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +31,7 @@ class Register : AppCompatActivity() {
         val txtUsuario = findViewById<EditText>(R.id.txtUsuario)
         val txtContrasena = findViewById<EditText>(R.id.txtContrasena)
         val btnRegistrar = findViewById<Button>(R.id.btnRegister)
+        val imgBack = findViewById<ImageView>(R.id.imgBack1)
 
 
         btnRegistrar.setOnClickListener {
@@ -91,6 +93,10 @@ class Register : AppCompatActivity() {
             }
 
 
+        }
+
+        imgBack.setOnClickListener {
+            finish()
         }
 
     }

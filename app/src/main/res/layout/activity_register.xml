@@ -89,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtNombreRegistro" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/albert_sans"
@@ -140,4 +140,17 @@
         app:layout_constraintStart_toStartOf="@+id/view5"
         app:layout_constraintTop_toBottomOf="@+id/txtContrasena"
         app:layout_constraintVertical_bias="0.651" />
+
+    <ImageView
+        android:id="@+id/imgBack1"
+        android:layout_width="66dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/baseline_back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

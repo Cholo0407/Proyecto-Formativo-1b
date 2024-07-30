@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#588157"
+    android:paddingEnd="10dp"
     tools:context=".anadirPacientes">
 
     <View
@@ -15,6 +16,7 @@
         android:layout_marginTop="228dp"
         android:background="@drawable/s5e27fdsw1lr270588157a3b18a"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,47 +35,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtApellido"
-        android:layout_width="169dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/fondo_txt"
-        android:ems="10"
-        android:hint="Apellidos"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:textColor="#DAD7CD"
-        android:textColorHint="#A3B18A"
-        app:layout_constraintBottom_toTopOf="@+id/txtEnfermedad"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtNombre"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/txtNombre"
-        android:layout_width="161dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/fondo_txt"
-        android:ems="10"
-        android:hint="Nombres"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:textColor="#DAD7CD"
-        android:textColorHint="#A3B18A"
-        app:layout_constraintBottom_toTopOf="@+id/txtEnfermedad"
-        app:layout_constraintEnd_toStartOf="@+id/txtApellido"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
         android:id="@+id/txtMedicamento"
         android:layout_width="364dp"
         android:layout_height="56dp"
@@ -85,6 +46,7 @@
         android:hint="Medicamento/s"
         android:inputType="text"
         android:paddingLeft="10dp"
+        android:paddingEnd="10dp"
         android:textColor="#DAD7CD"
         android:textColorHint="#A3B18A"
         app:layout_constraintBottom_toTopOf="@+id/txtFechaNacimiento"
@@ -92,60 +54,23 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/txtEdad"
-        android:layout_width="74dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="245dp"
-        android:background="@drawable/fondo_txt"
-        android:ems="10"
-        android:hint="Edad"
-        android:inputType="number"
-        android:paddingLeft="10dp"
-        android:textColor="#DAD7CD"
-        android:textColorHint="#A3B18A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtNumCama" />
-
-    <EditText
         android:id="@+id/txtHoraMedicina"
         android:layout_width="365dp"
         android:layout_height="55dp"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="18dp"
         android:background="@drawable/fondo_txt"
         android:ems="10"
         android:hint="Hora de medicamentos"
         android:inputType="text"
         android:paddingLeft="10dp"
+        android:paddingEnd="10dp"
         android:textColor="#DAD7CD"
         android:textColorHint="#A3B18A"
-        app:layout_constraintBottom_toTopOf="@+id/txtEdad"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/txtNumCuarto"
-        android:layout_width="141dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="144dp"
-        android:background="@drawable/fondo_txt"
-        android:ems="10"
-        android:hint="Num de cuarto"
-        android:inputType="number"
-        android:paddingLeft="10dp"
-        android:textColor="#DAD7CD"
-        android:textColorHint="#A3B18A"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegistrar"
-        app:layout_constraintEnd_toStartOf="@+id/txtNumCama"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHoraMedicina" />
 
     <EditText
         android:id="@+id/txtFechaNacimiento"
@@ -159,6 +84,7 @@
         android:hint="Fecha de nacimiento"
         android:inputType="text"
         android:paddingLeft="10dp"
+        android:paddingEnd="10dp"
         android:textColor="#DAD7CD"
         android:textColorHint="#A3B18A"
         app:layout_constraintBottom_toTopOf="@+id/txtHoraMedicina"
@@ -166,30 +92,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/txtNumCama"
-        android:layout_width="133dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="146dp"
-        android:background="@drawable/fondo_txt"
-        android:ems="10"
-        android:hint="Num de cama"
-        android:inputType="number"
-        android:paddingLeft="10dp"
-        android:textColor="#DAD7CD"
-        android:textColorHint="#A3B18A"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegistrar"
-        app:layout_constraintEnd_toStartOf="@+id/txtEdad"
-        app:layout_constraintStart_toEndOf="@+id/txtNumCuarto"
-        app:layout_constraintTop_toBottomOf="@+id/txtHoraMedicina" />
-
-    <EditText
         android:id="@+id/txtEnfermedad"
         android:layout_width="364dp"
         android:layout_height="55dp"
         android:layout_marginStart="23dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/fondo_txt"
@@ -197,24 +104,132 @@
         android:hint="Enfermedad/es"
         android:inputType="text"
         android:paddingLeft="10dp"
+        android:paddingEnd="10dp"
         android:textColor="#DAD7CD"
         android:textColorHint="#A3B18A"
         app:layout_constraintBottom_toTopOf="@+id/txtMedicamento"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="169dp"
-        android:layout_height="45dp"
+        android:layout_width="186dp"
+        android:layout_height="52dp"
         android:layout_marginStart="123dp"
         android:layout_marginEnd="124dp"
-        android:layout_marginBottom="59dp"
+        android:layout_marginBottom="44dp"
         android:backgroundTint="#344E41"
         android:text="Registrar"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="362dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="14dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/txtEnfermedad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="161dp"
+            android:layout_height="51dp"
+            android:background="@drawable/fondo_txt"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#DAD7CD"
+            android:textColorHint="#A3B18A" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/txtApellido"
+            android:layout_width="169dp"
+            android:layout_height="51dp"
+            android:background="@drawable/fondo_txt"
+            android:ems="10"
+            android:hint="Apellido"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#DAD7CD"
+            android:textColorHint="#A3B18A" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="364dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="136dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/txtNumCuarto"
+            android:layout_width="141dp"
+            android:layout_height="55dp"
+            android:background="@drawable/fondo_txt"
+            android:ems="10"
+            android:hint="Num de cuarto"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textColor="#DAD7CD"
+            android:textColorHint="#A3B18A" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/txtNumCama"
+            android:layout_width="133dp"
+            android:layout_height="53dp"
+            android:background="@drawable/fondo_txt"
+            android:ems="10"
+            android:hint="Num de cama"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#DAD7CD"
+            android:textColorHint="#A3B18A" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/txtEdad"
+            android:layout_width="74dp"
+            android:layout_height="51dp"
+            android:background="@drawable/fondo_txt"
+            android:ems="10"
+            android:hint="Edad"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#DAD7CD"
+            android:textColorHint="#A3B18A" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
