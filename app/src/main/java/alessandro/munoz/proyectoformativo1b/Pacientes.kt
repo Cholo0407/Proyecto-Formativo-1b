@@ -1,10 +1,19 @@
 package alessandro.munoz.proyectoformativo1b
 
+import Modelo.ClaseConexion
+import Modelo.Pacientes
+import RecyclerViewHelpers.Adaptador
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +42,51 @@ class Pacientes : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pacientes, container, false)
+        val root = inflater.inflate(R.layout.fragment_pacientes, container, false)
+
+        val rcvPacientes = root.findViewById<RecyclerView>(R.id.rcvPacientes)
+
+        rcvPacientes.layoutManager = LinearLayoutManager(this.context)
+
+        fun obtenerPacientes(): List<Pacientes> {
+            val objConexion = ClaseConexion().cadenaConexion()
+
+            val statement = objConexion?.createStatement()
+            val resultSet = statement?.executeQuery("SELECT * FROM Pacientes")!!
+
+            val listaPacientes = mutableListOf<Pacientes>()
+
+            while (resultSet.next()) {
+                val uuid = resultSet.getString("uuid_paciente")
+                val nombre = resultSet.getString("nombre")
+                val apellido = resultSet.getString("apellido")
+                val edad = resultSet.getInt("edad")
+                val enfermedad = resultSet.getString("enfermedad")
+                val numCuarto = resultSet.getInt("numero_cuarto")
+                val numCama = resultSet.getInt("numero_cama")
+                val medicamentos = resultSet.getString("medicamentos")
+                val fechaNaciemiento = resultSet.getString("fecha_nacimiento")
+                val horaMedicamentos = resultSet.getString("hora_medicamentos")
+
+                val valores = Pacientes(uuid, nombre, apellido, edad, enfermedad, numCuarto, numCama, medicamentos, fechaNaciemiento, horaMedicamentos)
+
+                listaPacientes.add(valores)
+            }
+
+            return listaPacientes
+        }
+
+        //asignar adaptador
+        CoroutineScope(Dispatchers.IO).launch {
+            val pacientes = obtenerPacientes()
+            withContext(Dispatchers.Main) {
+                val adaptador = Adaptador(pacientes)
+                rcvPacientes.adapter = adaptador
+            }
+        }
+
+
+        return root
     }
 
     companion object {

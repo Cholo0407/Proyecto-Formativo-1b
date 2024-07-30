@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +35,26 @@ class anadirPacientes : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_anadir_pacientes, container, false)
+        val root = inflater.inflate(R.layout.fragment_anadir_pacientes, container, false)
+
+        val txtNombre = root.findViewById<EditText>(R.id.txtNombre)
+        val txtApellido = root.findViewById<EditText>(R.id.txtApellido)
+        val txtEnfermedad = root.findViewById<EditText>(R.id.txtEnfermedad)
+        val txtMedicamento = root.findViewById<EditText>(R.id.txtMedicamento)
+        val txtFechaNacimiento = root.findViewById<EditText>(R.id.txtFechaNacimiento)
+        val txtHoraMedicamento = root.findViewById<EditText>(R.id.txtHoraMedicina)
+        val txtnumCuarto = root.findViewById<EditText>(R.id.txtNumCuarto)
+        val txtnumCama = root.findViewById<EditText>(R.id.txtNumCama)
+        val txtEdad = root.findViewById<EditText>(R.id.txtEdad)
+        val btnGuardar = root.findViewById<Button>(R.id.btnRegistrar)
+
+        btnGuardar.setOnClickListener {
+
+        }
+
+
+
+        return root
     }
 
     companion object {
