@@ -53,6 +53,8 @@ class anadirPacientes : Fragment() {
         val txtnumCuarto = root.findViewById<EditText>(R.id.txtNumCuarto)
         val txtnumCama = root.findViewById<EditText>(R.id.txtNumCama)
         val txtEdad = root.findViewById<EditText>(R.id.txtEdad)
+        val txtTelefono = root.findViewById<EditText>(R.id.txtTelefono)
+        val txtTipoSangre = root.findViewById<EditText>(R.id.txtTipoSangre)
         val btnGuardar = root.findViewById<Button>(R.id.btnRegistrar)
 
         btnGuardar.setOnClickListener {
@@ -65,6 +67,8 @@ class anadirPacientes : Fragment() {
             val numCuarto = txtnumCuarto.text.toString()
             val numCama = txtnumCama.text.toString()
             val edad = txtEdad.text.toString()
+            val telefono = txtTelefono.text.toString()
+            val TipoSangre = txtTipoSangre.text.toString()
 
             var validacion = false
 
@@ -132,6 +136,20 @@ class anadirPacientes : Fragment() {
                 txtEdad.error = null
             }
 
+            if (telefono.isEmpty()){
+                txtTelefono.error = "Ingrese un numero de telefono"
+                validacion= true
+            } else {
+                txtTelefono.error = null
+            }
+
+            if (TipoSangre.isEmpty()){
+                txtTipoSangre.error = "Ingrese un tipo de sangre"
+                validacion= true
+            } else {
+                txtTipoSangre.error = null
+            }
+
             if (!edad.matches(Regex("[0-9]+"))) {
                 txtEdad.error = "La edad solo puede contener números"
                 validacion = true
@@ -147,17 +165,19 @@ class anadirPacientes : Fragment() {
                     GlobalScope.launch(Dispatchers.IO) {
                         val objConexion = ClaseConexion().cadenaConexion()
 
-                        val crearPaciente = objConexion?.prepareStatement("Insert INTO Pacientes Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")!!
+                        val crearPaciente = objConexion?.prepareStatement("Insert INTO Pacientes Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")!!
                         crearPaciente.setString(1, UUID.randomUUID().toString())
                         crearPaciente.setString(2, txtNombre.text.toString())
                         crearPaciente.setString(3, txtApellido.text.toString())
-                        crearPaciente.setInt(4, txtEdad.text.toString().toInt())
-                        crearPaciente.setString(5, txtEnfermedad.text.toString())
-                        crearPaciente.setInt(6, txtnumCuarto.text.toString().toInt())
-                        crearPaciente.setInt(7, txtnumCama.text.toString().toInt())
-                        crearPaciente.setString(8, txtMedicamento.text.toString())
-                        crearPaciente.setString(9, txtFechaNacimiento.text.toString())
-                        crearPaciente.setString(10, txtHoraMedicamento.text.toString())
+                        crearPaciente.setString(4, txtTipoSangre.text.toString())
+                        crearPaciente.setString(5, txtTelefono.text.toString())
+                        crearPaciente.setInt(6, txtEdad.text.toString().toInt())
+                        crearPaciente.setString(7, txtEnfermedad.text.toString())
+                        crearPaciente.setInt(8, txtnumCuarto.text.toString().toInt())
+                        crearPaciente.setInt(9, txtnumCama.text.toString().toInt())
+                        crearPaciente.setString(10, txtMedicamento.text.toString())
+                        crearPaciente.setString(11, txtFechaNacimiento.text.toString())
+                        crearPaciente.setString(12, txtHoraMedicamento.text.toString())
                         crearPaciente.executeUpdate()
 
                         withContext(Dispatchers.Main){
@@ -172,6 +192,8 @@ class anadirPacientes : Fragment() {
                             txtnumCuarto.text.clear()
                             txtnumCama.text.clear()
                             txtEdad.text.clear()
+                            txtTelefono.text.clear()
+                            txtTipoSangre.text.clear()
                         }
 
 

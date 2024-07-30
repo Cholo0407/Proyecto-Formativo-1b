@@ -236,9 +236,11 @@
     <LinearLayout
         android:layout_width="362dp"
         android:layout_height="49dp"
+        android:layout_marginTop="17dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="516dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <EditText
             android:id="@+id/txtTelefono"
@@ -247,7 +249,7 @@
             android:background="@drawable/fondo_txt"
             android:ems="10"
             android:hint="Telefono"
-            android:inputType="number"
+            android:inputType="text"
             android:paddingLeft="10dp"
             android:paddingEnd="10dp"
             android:textColor="#DAD7CD"
@@ -265,7 +267,7 @@
             android:background="@drawable/fondo_txt"
             android:ems="10"
             android:hint="Tipo de sangre"
-            android:inputType="number"
+            android:inputType="text"
             android:paddingLeft="10dp"
             android:paddingEnd="10dp"
             android:textColor="#DAD7CD"
