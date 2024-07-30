@@ -67,7 +67,7 @@
         android:backgroundTint="#FF213129"
         android:ems="10"
         android:inputType="text"
-        android:textColor="#DAD7CD"
+        android:textColor="#FF213129"
         app:layout_constraintEnd_toEndOf="@+id/view8"
         app:layout_constraintStart_toStartOf="@+id/view8"
         app:layout_constraintTop_toTopOf="@+id/view8" />

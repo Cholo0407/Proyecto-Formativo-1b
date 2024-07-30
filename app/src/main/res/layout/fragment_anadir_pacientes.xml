@@ -12,10 +12,11 @@
         android:id="@+id/view2"
         android:layout_width="549dp"
         android:layout_height="500dp"
+        android:layout_marginTop="228dp"
         android:background="@drawable/s5e27fdsw1lr270588157a3b18a"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
