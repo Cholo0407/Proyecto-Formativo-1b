@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    app:cardBackgroundColor="#31493D"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+
+    app:cardUseCompatPadding="true"
+    app:contentPadding="20dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="344dp"
+        android:layout_height="123dp">
+
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="114dp"
+            android:layout_height="114dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444"
+            app:srcCompat="@drawable/baseline_airline_seat_flat_24" />
+
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/albert_sans_semibold"
+            android:text="Nombre"
+            android:textColor="#DAD7CD"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.477"
+            app:layout_constraintStart_toEndOf="@+id/imgFoto"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblBorrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/albert_sans"
+            android:text="Borrar"
+            android:textColor="#DAD7CD"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/imgBorrar"
+            app:layout_constraintEnd_toEndOf="@+id/imgBorrar"
+            app:layout_constraintStart_toStartOf="@+id/imgBorrar" />
+
+        <TextView
+            android:id="@+id/lblEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/albert_sans"
+            android:text="Editar"
+            android:textColor="#DAD7CD"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/imgEditar"
+            app:layout_constraintEnd_toEndOf="@+id/imgEditar"
+            app:layout_constraintStart_toStartOf="@+id/imgEditar" />
+
+        <TextView
+            android:id="@+id/lblInforme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/albert_sans"
+            android:text="Expediente"
+            android:textColor="#DAD7CD"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/imgExpediente"
+            app:layout_constraintEnd_toEndOf="@+id/imgExpediente"
+            app:layout_constraintStart_toStartOf="@+id/imgExpediente" />
+
+        <ImageView
+            android:id="@+id/imgBorrar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgFoto"
+            app:srcCompat="@drawable/delete" />
+
+        <ImageView
+            android:id="@+id/imgEditar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgBorrar"
+            app:srcCompat="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/imgExpediente"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgEditar"
+            app:srcCompat="@drawable/description" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
