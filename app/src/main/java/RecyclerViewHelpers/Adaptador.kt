@@ -24,10 +24,12 @@ class Adaptador(var Datos: List<Pacientes>): RecyclerView.Adapter<ViewHolder>(){
         return ViewHolder(vista)
     }
 
-    fun ActualizarVista(nombre: String, apellido: String, edad: Int, enfermedad: String, numero_Cuarto: Int, numero_Cama: Int, medicamentos: String, fecha_Nacimiento: String, hora_Medicamentos: String, uuid_paciente: String){
+    fun ActualizarVista(nombre: String, apellido: String, tipo_sangre: String, telefono: String, edad: Int, enfermedad: String, numero_Cuarto: Int, numero_Cama: Int, medicamentos: String, fecha_Nacimiento: String, hora_Medicamentos: String, uuid_paciente: String){
         val index = Datos.indexOfFirst { it.uuid_paciente == uuid_paciente }
         Datos[index].nombre = nombre
         Datos[index].apellido = apellido
+        Datos[index].tipo_sangre = tipo_sangre
+        Datos[index].telefono = telefono
         Datos[index].edad = edad
         Datos[index].enfermedad = enfermedad
         Datos[index].numero_Cuarto = numero_Cuarto
@@ -38,25 +40,27 @@ class Adaptador(var Datos: List<Pacientes>): RecyclerView.Adapter<ViewHolder>(){
         notifyDataSetChanged()
     }
 
-    fun EditarPaciente(nombre: String, apellido: String, edad: Int, enfermedad: String, numero_Cuarto: Int, numero_Cama: Int, medicamentos: String, fecha_Nacimiento: String, hora_medicamentos: String, uuid_paciente: String) {
+    fun EditarPaciente(nombre: String, apellido: String, tipo_sangre: String, telefono: String, edad: Int, enfermedad: String, numero_Cuarto: Int, numero_Cama: Int, medicamentos: String, fecha_Nacimiento: String, hora_medicamentos: String, uuid_paciente: String) {
         GlobalScope.launch(Dispatchers.IO) {
             val objConexion = ClaseConexion().cadenaConexion()
 
-            val actualizarPaciente = objConexion?.prepareStatement("UPDATE pacientes SET nombre = ?, apellido = ?, edad = ?, enfermedad = ?, numero_Cuarto = ?, numero_Cama = ?, medicamentos = ?, fecha_Nacimiento = ?, hora_medicamentos = ? WHERE uuid_paciente = ?")!!
+            val actualizarPaciente = objConexion?.prepareStatement("UPDATE pacientes SET nombre = ?, apellido = ?, tipo_sangre = ?, telefono = ?, edad = ?, enfermedad = ?, numero_Cuarto = ?, numero_Cama = ?, medicamentos = ?, fecha_Nacimiento = ?, hora_medicamentos = ? WHERE uuid_paciente = ?")!!
             actualizarPaciente.setString(1, nombre)
             actualizarPaciente.setString(2, apellido)
-            actualizarPaciente.setInt(3, edad)
-            actualizarPaciente.setString(4, enfermedad)
-            actualizarPaciente.setInt(5, numero_Cuarto)
-            actualizarPaciente.setInt(6, numero_Cama)
-            actualizarPaciente.setString(7, medicamentos)
-            actualizarPaciente.setString(8, fecha_Nacimiento)
-            actualizarPaciente.setString(9, hora_medicamentos)
-            actualizarPaciente.setString(10, uuid_paciente)
+            actualizarPaciente.setString(3, tipo_sangre)
+            actualizarPaciente.setString(4, telefono)
+            actualizarPaciente.setInt(5, edad)
+            actualizarPaciente.setString(6, enfermedad)
+            actualizarPaciente.setInt(7, numero_Cuarto)
+            actualizarPaciente.setInt(8, numero_Cama)
+            actualizarPaciente.setString(9, medicamentos)
+            actualizarPaciente.setString(10, fecha_Nacimiento)
+            actualizarPaciente.setString(11, hora_medicamentos)
+            actualizarPaciente.setString(12, uuid_paciente)
             actualizarPaciente.executeUpdate()
 
             withContext(Dispatchers.Main){
-                ActualizarVista(nombre, apellido, edad, enfermedad, numero_Cuarto, numero_Cama, medicamentos, fecha_Nacimiento, hora_medicamentos, uuid_paciente)
+                ActualizarVista(nombre, apellido, tipo_sangre, telefono, edad, enfermedad, numero_Cuarto, numero_Cama, medicamentos, fecha_Nacimiento, hora_medicamentos, uuid_paciente)
             }
         }
     }
@@ -119,6 +123,12 @@ class Adaptador(var Datos: List<Pacientes>): RecyclerView.Adapter<ViewHolder>(){
             val txtApellido = EditText(context)
             layout.addView(txtApellido)
             txtApellido.setText(paciente.apellido)
+            val txtTipoSangre = EditText(context)
+            layout.addView(txtTipoSangre)
+            txtTipoSangre.setText(paciente.tipo_sangre)
+            val txtTelefono = EditText(context)
+            layout.addView(txtTelefono)
+            txtTelefono.setText(paciente.telefono)
             val txtEdad = EditText(context)
             layout.addView(txtEdad)
             txtEdad.setText(paciente.edad.toString())
@@ -148,7 +158,7 @@ class Adaptador(var Datos: List<Pacientes>): RecyclerView.Adapter<ViewHolder>(){
             builder.setView(layout)
 
             builder.setPositiveButton("Aceptar"){ dialog, wich ->
-                EditarPaciente(txtNombre.text.toString(), txtApellido.text.toString(), txtEdad.text.toString().toInt(), txtEnfermedad.text.toString(), txtNumeroCuarto.text.toString().toInt(), txtNumeroCama.text.toString().toInt(), txtMedicamentos.text.toString(), txtFechaNacimiento.text.toString(), txtHoraMedicamentos.text.toString(), uuid)
+                EditarPaciente(txtNombre.text.toString(), txtApellido.text.toString(), txtTipoSangre.text.toString(), txtTelefono.text.toString(), txtEdad.text.toString().toInt(), txtEnfermedad.text.toString(), txtNumeroCuarto.text.toString().toInt(), txtNumeroCama.text.toString().toInt(), txtMedicamentos.text.toString(), txtFechaNacimiento.text.toString(), txtHoraMedicamentos.text.toString(), uuid)
                 Toast.makeText(context, "Paciente editado", Toast.LENGTH_SHORT).show()
             }
 
@@ -168,13 +178,15 @@ class Adaptador(var Datos: List<Pacientes>): RecyclerView.Adapter<ViewHolder>(){
             expediente.putExtra("uuid_paciente", paciente.uuid_paciente)
             expediente.putExtra("nombre", paciente.nombre)
             expediente.putExtra("apellido", paciente.apellido)
+            expediente.putExtra("tipo_sangre", paciente.tipo_sangre)
+            expediente.putExtra("telefono", paciente.telefono)
             expediente.putExtra("edad", paciente.edad)
             expediente.putExtra("enfermedad", paciente.enfermedad)
             expediente.putExtra("numero_Cuarto", paciente.numero_Cuarto)
             expediente.putExtra("numero_Cama", paciente.numero_Cama)
             expediente.putExtra("medicamentos", paciente.medicamentos)
             expediente.putExtra("fecha_nacimiento", paciente.fecha_Nacimiento)
-            expediente.putExtra("hora_medicamentos", paciente.medicamentos)
+            expediente.putExtra("hora_medicamentos", paciente.hora_Medicamentos)
             context.startActivity(expediente)
 
 

@@ -60,6 +60,8 @@ class Pacientes : Fragment() {
                 val uuid = resultSet.getString("uuid_paciente")
                 val nombre = resultSet.getString("nombre")
                 val apellido = resultSet.getString("apellido")
+                val tipo_sangre = resultSet.getString("tipo_sangre")
+                val telefono = resultSet.getString("telefono")
                 val edad = resultSet.getInt("edad")
                 val enfermedad = resultSet.getString("enfermedad")
                 val numCuarto = resultSet.getInt("numero_cuarto")
@@ -68,7 +70,7 @@ class Pacientes : Fragment() {
                 val fechaNaciemiento = resultSet.getString("fecha_nacimiento")
                 val horaMedicamentos = resultSet.getString("hora_medicamentos")
 
-                val valores = Pacientes(uuid, nombre, apellido, edad, enfermedad, numCuarto, numCama, medicamentos, fechaNaciemiento, horaMedicamentos)
+                val valores = Pacientes(uuid, nombre, apellido, tipo_sangre, telefono, edad, enfermedad, numCuarto, numCama, medicamentos, fechaNaciemiento, horaMedicamentos)
 
                 listaPacientes.add(valores)
             }
